@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Wassim\\source\\repos\\StripeSplitChargeTest\\StripeSplitChargeTest\\StripeSplitChargeTest.csproj": {}
+    "C:\\Users\\Wassim\\source\\repos\\stripe-test\\stripe-split-charge\\StripeSplitChargeTest\\StripeSplitChargeTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Wassim\\source\\repos\\StripeSplitChargeTest\\StripeSplitChargeTest\\StripeSplitChargeTest.csproj": {
+    "C:\\Users\\Wassim\\source\\repos\\stripe-test\\stripe-split-charge\\StripeSplitChargeTest\\StripeSplitChargeTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Wassim\\source\\repos\\StripeSplitChargeTest\\StripeSplitChargeTest\\StripeSplitChargeTest.csproj",
+        "projectUniqueName": "C:\\Users\\Wassim\\source\\repos\\stripe-test\\stripe-split-charge\\StripeSplitChargeTest\\StripeSplitChargeTest.csproj",
         "projectName": "StripeSplitChargeTest",
-        "projectPath": "C:\\Users\\Wassim\\source\\repos\\StripeSplitChargeTest\\StripeSplitChargeTest\\StripeSplitChargeTest.csproj",
+        "projectPath": "C:\\Users\\Wassim\\source\\repos\\stripe-test\\stripe-split-charge\\StripeSplitChargeTest\\StripeSplitChargeTest.csproj",
         "packagesPath": "C:\\Users\\Wassim\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Wassim\\source\\repos\\StripeSplitChargeTest\\StripeSplitChargeTest\\obj\\",
+        "outputPath": "C:\\Users\\Wassim\\source\\repos\\stripe-test\\stripe-split-charge\\StripeSplitChargeTest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Wassim\\AppData\\Roaming\\NuGet\\NuGet.Config",

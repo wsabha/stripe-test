@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XGc6AZP8+DpmlGK675q+lw2toXiTxZfchf7o7ex5Llwjn9TAnRop9BGYaPrAUdTeh4KaFcTXQQfAM3IWaKgLtg==",
+  "dgSpecHash": "Jj6OCLSg+sehtLKvnwFvdUMx2FCaNTx8R0y3OXqRcxxEB9gjZjVWh0zgwYkbhI4BFkamvsElIikr3alB7fh4XQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Wassim\\source\\repos\\StripeSplitChargeTest\\StripeSplitChargeTest\\StripeSplitChargeTest.csproj",
+  "projectFilePath": "C:\\Users\\Wassim\\source\\repos\\stripe-test\\stripe-split-charge\\StripeSplitChargeTest\\StripeSplitChargeTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Wassim\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\Wassim\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
