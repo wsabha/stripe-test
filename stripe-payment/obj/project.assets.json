@@ -89,7 +89,7 @@
           "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {}
         }
       },
-      "Stripe.net/39.121.0": {
+      "Stripe.net/39.122.0": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "12.0.3",
@@ -423,10 +423,10 @@
         "newtonsoft.json.bson.nuspec"
       ]
     },
-    "Stripe.net/39.121.0": {
-      "sha512": "q1Tk6KJdVoiNpTZi3Fl0d6fq0PzFT3yLC8wC2Hquj+Dmp3O3nCuU9YjKMez0CXoqiXfJYn+juYvm6MD7P8sz0w==",
+    "Stripe.net/39.122.0": {
+      "sha512": "RJ4Nnvxg0nVWNi1CQgn8qSwcbRXIYer0atAN2A88yTu3HtlzmQHRl4nfa4mA3ytxw57BFaGJBWIcuxG1mlRSRw==",
       "type": "package",
-      "path": "stripe.net/39.121.0",
+      "path": "stripe.net/39.122.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -442,7 +442,7 @@
         "lib/netcoreapp3.1/Stripe.net.xml",
         "lib/netstandard2.0/Stripe.net.dll",
         "lib/netstandard2.0/Stripe.net.xml",
-        "stripe.net.39.121.0.nupkg.sha512",
+        "stripe.net.39.122.0.nupkg.sha512",
         "stripe.net.nuspec"
       ]
     },
@@ -727,11 +727,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Wassim\\Downloads\\stripe-sample-code\\StripeExample.csproj",
+      "projectUniqueName": "C:\\Users\\Wassim\\source\\repos\\stripe-test\\stripe-payment\\StripeExample.csproj",
       "projectName": "StripeExample",
-      "projectPath": "C:\\Users\\Wassim\\Downloads\\stripe-sample-code\\StripeExample.csproj",
+      "projectPath": "C:\\Users\\Wassim\\source\\repos\\stripe-test\\stripe-payment\\StripeExample.csproj",
       "packagesPath": "C:\\Users\\Wassim\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Wassim\\Downloads\\stripe-sample-code\\obj\\",
+      "outputPath": "C:\\Users\\Wassim\\source\\repos\\stripe-test\\stripe-payment\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Wassim\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -787,7 +787,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
       }
     }
   }

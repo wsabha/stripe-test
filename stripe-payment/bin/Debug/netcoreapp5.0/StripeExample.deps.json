@@ -34,7 +34,7 @@
       "StripeExample/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "5.0.11",
-          "Stripe.net": "39.121.0",
+          "Stripe.net": "39.122.0",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "5.0.0.0",
@@ -389,15 +389,15 @@
           "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {}
         }
       },
-      "Stripe.net/39.121.0": {
+      "Stripe.net/39.122.0": {
         "dependencies": {
           "Newtonsoft.Json": "12.0.3",
           "System.Configuration.ConfigurationManager": "5.0.0"
         },
         "runtime": {
           "lib/net5.0/Stripe.net.dll": {
-            "assemblyVersion": "39.121.0.0",
-            "fileVersion": "39.121.0.0"
+            "assemblyVersion": "39.122.0.0",
+            "fileVersion": "39.122.0.0"
           }
         },
         "compile": {
@@ -2216,12 +2216,12 @@
       "path": "newtonsoft.json.bson/1.0.2",
       "hashPath": "newtonsoft.json.bson.1.0.2.nupkg.sha512"
     },
-    "Stripe.net/39.121.0": {
+    "Stripe.net/39.122.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-q1Tk6KJdVoiNpTZi3Fl0d6fq0PzFT3yLC8wC2Hquj+Dmp3O3nCuU9YjKMez0CXoqiXfJYn+juYvm6MD7P8sz0w==",
-      "path": "stripe.net/39.121.0",
-      "hashPath": "stripe.net.39.121.0.nupkg.sha512"
+      "sha512": "sha512-RJ4Nnvxg0nVWNi1CQgn8qSwcbRXIYer0atAN2A88yTu3HtlzmQHRl4nfa4mA3ytxw57BFaGJBWIcuxG1mlRSRw==",
+      "path": "stripe.net/39.122.0",
+      "hashPath": "stripe.net.39.122.0.nupkg.sha512"
     },
     "System.Configuration.ConfigurationManager/5.0.0": {
       "type": "package",

@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Stripe;
 using Stripe.Checkout;
+using StripeExample;
 
 public class StripeOptions
 {
@@ -88,6 +89,61 @@ namespace server.Controllers
             Session session = service.Create(options);
 
             Response.Headers.Add("Location", session.Url);
+            return new StatusCodeResult(303);
+        }
+    }
+
+    [Route("create-stripe-account")]
+    [ApiController]
+    public class AccountApiController : Controller
+    {
+        [HttpPost]
+        public ActionResult Create()
+        {
+
+            string redirect_uri = "http://localhost:4242/token";
+            string clientId = "ca_Ls4hdT0Ard53YNfcPmrjZqaMtC8TdEkS";
+            string state = "123";
+            string queryString = $"redirect_uri={redirect_uri}&" +
+                $"stripe_user[business_type]=individual&stripe_user[first_name]=Dr.&stripe_user[last_name]=Strange&stripe_user[email]=strange@test.com" +
+                $"&stripe_user[country]=au&state={state}&client_id={clientId}";
+
+            string authURL = "https://connect.stripe.com/express/oauth/authorize?" + queryString;
+
+            Response.Headers.Add("Location", authURL);
+
+            return new StatusCodeResult(303);
+        }
+    }
+
+    [Route("token")]
+    [ApiController]
+    public class TokenApiController : Controller
+    {
+        [HttpGet]
+        public ActionResult getToken()
+        {
+            // Get account id after registration
+            string accessCode = Request.Query["code"].ToString();
+            string state = Request.Query["state"].ToString();
+            if (accessCode != "")
+            {
+                APIClient stripeConnect = new("https://connect.stripe.com/");
+
+                var body =
+                new
+                {
+                    grant_type = "authorization_code",
+                    client_id = "ca_Ls4hdT0Ard53YNfcPmrjZqaMtC8TdEkS",
+                    client_secret = "sk_test_51LAKSVIj6R8IWHe4AOZtq7KcDNGl8hR8XLIxMULKZmIJkhqMIgi2sRAdLjIPLw80CIlpAvN1KpuVT827VLxJVM6X00rN0oIHg8",
+                    code = accessCode
+                };
+
+                var tokenAuthResultTask = stripeConnect.PostAsJsonAsync(body, "oauth/token");
+
+                tokenAuthResultTask.Wait();
+            }
+
             return new StatusCodeResult(303);
         }
     }

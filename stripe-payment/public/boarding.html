@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Account On Boarding</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <section>
+        <div class="product">
+            <div class="description">
+                <h2>Dr. Strange Account</h2>
+                <h3>First Name: Dr.</h3>
+                <h3>Last Name: Strange</h3>
+                <h3>strange@test.com</h3>
+                <h3>country: Australia</h3>
+            </div>
+        </div>
+        <form action="/create-stripe-account" method="POST">
+            <button type="submit" id="create-button">Create</button>
+        </form>
+    </section>
+</body>
+</html>

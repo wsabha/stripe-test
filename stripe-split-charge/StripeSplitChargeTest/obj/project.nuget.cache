@@ -1,18 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Jj6OCLSg+sehtLKvnwFvdUMx2FCaNTx8R0y3OXqRcxxEB9gjZjVWh0zgwYkbhI4BFkamvsElIikr3alB7fh4XQ==",
+  "dgSpecHash": "ch81MJ8FiNA6O1QPD0MpP32Kty2LvPfjywIuR2yIGdLmBli3VZXyeqBLHbqxzYfHizJLQc2vu3TwTEc1tpGZ1Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Wassim\\source\\repos\\stripe-test\\stripe-split-charge\\StripeSplitChargeTest\\StripeSplitChargeTest.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Wassim\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
-    "C:\\Users\\Wassim\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
-    "C:\\Users\\Wassim\\.nuget\\packages\\stripe.net\\39.120.0\\stripe.net.39.120.0.nupkg.sha512",
-    "C:\\Users\\Wassim\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.0\\system.configuration.configurationmanager.6.0.0.nupkg.sha512",
-    "C:\\Users\\Wassim\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
-    "C:\\Users\\Wassim\\.nuget\\packages\\system.security.accesscontrol\\6.0.0\\system.security.accesscontrol.6.0.0.nupkg.sha512",
-    "C:\\Users\\Wassim\\.nuget\\packages\\system.security.cryptography.protecteddata\\6.0.0\\system.security.cryptography.protecteddata.6.0.0.nupkg.sha512",
-    "C:\\Users\\Wassim\\.nuget\\packages\\system.security.permissions\\6.0.0\\system.security.permissions.6.0.0.nupkg.sha512",
-    "C:\\Users\\Wassim\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }
