@@ -17,8 +17,7 @@ namespace StripeExample
         private List<string> _knownHeaderKeys = new List<string>
         {
             "ActionsGUIDs",
-            "Accept-Language",
-            "x-id-token"
+            "Accept-Language"
         };
         #endregion
 

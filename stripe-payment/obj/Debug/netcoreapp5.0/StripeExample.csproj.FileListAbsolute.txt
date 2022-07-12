@@ -54,5 +54,5 @@ C:\Users\Wassim\source\repos\stripe-test\stripe-payment\obj\Debug\netcoreapp5.0\
 C:\Users\Wassim\source\repos\stripe-test\stripe-payment\obj\Debug\netcoreapp5.0\staticwebassets\StripeExample.StaticWebAssets.xml
 C:\Users\Wassim\source\repos\stripe-test\stripe-payment\obj\Debug\netcoreapp5.0\scopedcss\bundle\StripeExample.styles.css
 C:\Users\Wassim\source\repos\stripe-test\stripe-payment\obj\Debug\netcoreapp5.0\StripeExample.RazorTargetAssemblyInfo.cache
-C:\Users\Wassim\source\repos\stripe-test\stripe-payment\obj\Debug\netcoreapp5.0\StripeExample.csproj.CopyComplete
 C:\Users\Wassim\source\repos\stripe-test\stripe-payment\obj\Debug\netcoreapp5.0\StripeExample.genruntimeconfig.cache
+C:\Users\Wassim\source\repos\stripe-test\stripe-payment\obj\Debug\netcoreapp5.0\StripeExample.csproj.AssemblyReference.cache

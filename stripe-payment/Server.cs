@@ -53,43 +53,64 @@ namespace server.Controllers
         [HttpPost]
         public ActionResult Create()
         {
-            var domain = "http://localhost:4242";
-            var options = new SessionCreateOptions
+            var options = new PaymentIntentCreateOptions
             {
-                CancelUrl = "http://localhost:4242/cancel.html",
-                SuccessUrl = "http://localhost:4242/success.html",
-                LineItems = new List<SessionLineItemOptions>
+                Amount = 1000,
+                Currency = "aud",
+                PaymentMethodTypes = new List<string>
                 {
-                  new SessionLineItemOptions
-                  {
-                    // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-                    PriceData = new SessionLineItemPriceDataOptions
-                    {
-                      UnitAmount = 1000,
-                      Currency = "aud",
-                      ProductData = new SessionLineItemPriceDataProductDataOptions
-                      {
-                        Name = "T-Shirt",
-                      },
-                    },
-                    Quantity = 1
-                  }
+                    "card"
                 },
-                Mode = "payment",
-                PaymentIntentData = new SessionPaymentIntentDataOptions
+                ApplicationFeeAmount = 123,
+                TransferData = new PaymentIntentTransferDataOptions
                 {
-                    ApplicationFeeAmount = 123,
-                    TransferData = new SessionPaymentIntentDataTransferDataOptions
-                    {
-                        Destination = "acct_1LEtgARLQXlwaSAi",
-                    },
-                },
+                    Destination = "acct_1LJ35xRFiwFctZgD",
+                }
             };
-            var service = new SessionService();
-            Session session = service.Create(options);
 
-            Response.Headers.Add("Location", session.Url);
-            return new StatusCodeResult(303);
+            var service = new PaymentIntentService();
+            var paymentIntent = service.Create(options);
+
+            return Ok(paymentIntent.ClientSecret);
+
+
+            //var domain = "http://localhost:4242";
+            //var options = new SessionCreateOptions
+            //{
+            //    CancelUrl = "http://localhost:4242/cancel.html",
+            //    SuccessUrl = "http://localhost:4242/success.html",
+            //    LineItems = new List<SessionLineItemOptions>
+            //    {
+            //      new SessionLineItemOptions
+            //      {
+            //        // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
+            //        PriceData = new SessionLineItemPriceDataOptions
+            //        {
+            //          UnitAmount = 1000,
+            //          Currency = "aud",
+            //          ProductData = new SessionLineItemPriceDataProductDataOptions
+            //          {
+            //            Name = "T-Shirt",
+            //          },
+            //        },
+            //        Quantity = 1
+            //      }
+            //    },
+            //    Mode = "payment",
+            //    PaymentIntentData = new SessionPaymentIntentDataOptions
+            //    {
+            //        ApplicationFeeAmount = 123,
+            //        TransferData = new SessionPaymentIntentDataTransferDataOptions
+            //        {
+            //            Destination = "acct_1LEtgARLQXlwaSAi",
+            //        },
+            //    },
+            //};
+            //var service = new SessionService();
+            //Session session = service.Create(options);
+
+            //Response.Headers.Add("Location", session.Url);
+            //return new StatusCodeResult(303);
         }
     }
 
