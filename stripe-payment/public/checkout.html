@@ -47,7 +47,7 @@
                     console.log(result.paymentIntent);
 
                     console.log('successful payment');
-                    $.post(`checkout/transfer/${result.paymentIntent.id}`, function (data) {
+                    $.post(`checkout/transfer/${result.paymentIntent.id}?firstAmount=${70}&secondAmount=${20}`, function (data) {
 
                         console.warn('Transfer Success');
                         alert("Payment/Transfers success");
@@ -70,7 +70,7 @@
             console.log("Submitted");
             $('#payment-element').show();
 
-            $.post("checkout/create", function (data) {
+            $.post("checkout/create/100", function (data) {
                 //checkout(data);
                 registerPaymentElement(data);
 
@@ -87,7 +87,7 @@
             <img src="https://i.imgur.com/EHyR2nP.png" alt="The cover of Stubborn Attachments" />
             <div class="description">
                 <h3>Appointment</h3>
-                <h5>$10.00</h5>
+                <h5>$100.00</h5>
             </div>
         </div>
 

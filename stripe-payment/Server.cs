@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore;
@@ -51,13 +52,14 @@ namespace server.Controllers
     [ApiController]
     public class CheckoutApiController : Controller
     {
-        [HttpPost("create")]
-        public ActionResult Create()
+        [HttpPost("create/{amount}")]
+        public ActionResult Create(long amount)
         {
-            string transferGrp = "TR0002";
+            Random rnd = new Random();
+            string transferGrp = $"TR_GRP_{rnd.Next()}";
             var options = new PaymentIntentCreateOptions
             {
-                Amount = 10000,
+                Amount = amount,
                 Currency = "aud",
                 PaymentMethodTypes = new List<string>
                 {
@@ -80,7 +82,7 @@ namespace server.Controllers
         }
 
         [HttpPost("transfer/{paymentIntentId}")]
-        public ActionResult Transfer(string paymentIntentId)
+        public ActionResult Transfer(string paymentIntentId, long firstAmount, long secondAmount)
         {
 
             var payIntentService = new Stripe.PaymentIntentService();
@@ -92,7 +94,7 @@ namespace server.Controllers
             // Create a Transfer to the clinic account (later):
             var transferOptions = new TransferCreateOptions
             {
-                Amount = 7000,
+                Amount = firstAmount,
                 Currency = "aud",
                 Destination = "acct_1LEwkrRJohca2bym",
                 TransferGroup = paymentIntent.TransferGroup,
@@ -105,7 +107,7 @@ namespace server.Controllers
             // Create a second Transfer to dr. account (later):
             var secondTransferOptions = new TransferCreateOptions
             {
-                Amount = 2000,
+                Amount = secondAmount,
                 Currency = "aud",
                 Destination = "acct_1LEwgZRK3EgITr3u",
                 TransferGroup = paymentIntent.TransferGroup,
