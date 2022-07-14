@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Buy cool new product</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="checkout.js"></script>
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            registerElements('pk_test_51LAKSVIj6R8IWHe4IyCactbmHwSXReleWUkewJEnHmcVtPM35NwFYAGiyc6SYAtFwkAIETKBLad3J59Q2bUyqM7u00LqCDefln');
+        });
+
+    </script>
+</head>
+<body>
+    <section>
+        <div class="product">
+            <img src="https://i.imgur.com/EHyR2nP.png" alt="The cover of Stubborn Attachments" />
+            <div class="description">
+                <h3>Appointment</h3>
+                <h5>$10.00</h5>
+            </div>
+        </div>
+        <!--<form action="/create-checkout-session" method="POST">
+        <button type="submit" id="checkout-button">Checkout</button>
+    </form>-->
+
+
+        <button class="btn btn-primary" onclick="SubmitCheckout()" style="margin-top: 20px">Checkout</button>
+        <div id="payment-element"></div>
+
+        <!--<label for="card-element" style="padding: 10px">Payment details</label>
+    <div id="card-element" style="padding: 10px"></div>
+    <button class="btn btn-primary" onclick="SubmitCheckout()" style="margin-top: 20px">Submit</button>-->
+
+    </section>
+</body>
+</html>
