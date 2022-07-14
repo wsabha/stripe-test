@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -46,71 +47,73 @@ namespace server.Controllers
         }
     }
 
-    [Route("create-checkout-session")]
+    [Route("checkout")]
     [ApiController]
     public class CheckoutApiController : Controller
     {
-        [HttpPost]
+        [HttpPost("create")]
         public ActionResult Create()
         {
+            string transferGrp = "TR0002";
             var options = new PaymentIntentCreateOptions
             {
-                Amount = 1000,
+                Amount = 10000,
                 Currency = "aud",
                 PaymentMethodTypes = new List<string>
                 {
-                    "card"
+                    "card",
+                    "au_becs_debit",
+                    "afterpay_clearpay"
                 },
-                ApplicationFeeAmount = 123,
-                TransferData = new PaymentIntentTransferDataOptions
-                {
-                    Destination = "acct_1LJ35xRFiwFctZgD",
-                }
+                TransferGroup=transferGrp,
+
+                //TransferData = new PaymentIntentTransferDataOptions
+                //{
+                //    Destination = "acct_1LJ35xRFiwFctZgD",
+                //}
             };
 
             var service = new PaymentIntentService();
             var paymentIntent = service.Create(options);
 
             return Ok(paymentIntent.ClientSecret);
+        }
 
+        [HttpPost("transfer/{paymentIntentId}")]
+        public ActionResult Transfer(string paymentIntentId)
+        {
 
-            //var domain = "http://localhost:4242";
-            //var options = new SessionCreateOptions
-            //{
-            //    CancelUrl = "http://localhost:4242/cancel.html",
-            //    SuccessUrl = "http://localhost:4242/success.html",
-            //    LineItems = new List<SessionLineItemOptions>
-            //    {
-            //      new SessionLineItemOptions
-            //      {
-            //        // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-            //        PriceData = new SessionLineItemPriceDataOptions
-            //        {
-            //          UnitAmount = 1000,
-            //          Currency = "aud",
-            //          ProductData = new SessionLineItemPriceDataProductDataOptions
-            //          {
-            //            Name = "T-Shirt",
-            //          },
-            //        },
-            //        Quantity = 1
-            //      }
-            //    },
-            //    Mode = "payment",
-            //    PaymentIntentData = new SessionPaymentIntentDataOptions
-            //    {
-            //        ApplicationFeeAmount = 123,
-            //        TransferData = new SessionPaymentIntentDataTransferDataOptions
-            //        {
-            //            Destination = "acct_1LEtgARLQXlwaSAi",
-            //        },
-            //    },
-            //};
-            //var service = new SessionService();
-            //Session session = service.Create(options);
+            var payIntentService = new Stripe.PaymentIntentService();
+            var paymentIntent = payIntentService.Get(paymentIntentId);
 
-            //Response.Headers.Add("Location", session.Url);
-            //return new StatusCodeResult(303);
+            var charge = paymentIntent.Charges.Data.SingleOrDefault();
+            
+            // Split charges for two different accounts
+            // Create a Transfer to the clinic account (later):
+            var transferOptions = new TransferCreateOptions
+            {
+                Amount = 7000,
+                Currency = "aud",
+                Destination = "acct_1LEwkrRJohca2bym",
+                TransferGroup = paymentIntent.TransferGroup,
+                SourceTransaction = charge.Id
+            };
+
+            var transferService = new TransferService();
+            var firstTransfer = transferService.Create(transferOptions);
+
+            // Create a second Transfer to dr. account (later):
+            var secondTransferOptions = new TransferCreateOptions
+            {
+                Amount = 2000,
+                Currency = "aud",
+                Destination = "acct_1LEwgZRK3EgITr3u",
+                TransferGroup = paymentIntent.TransferGroup,
+                SourceTransaction = charge.Id
+            };
+            var secondTransfer = transferService.Create(secondTransferOptions);
+
+            return Ok();
         }
     }
 

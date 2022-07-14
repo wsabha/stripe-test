@@ -57,8 +57,17 @@ async function registerPaymentElement(paymentIntentClientSecret) {
 
     // Set up Stripe.js and Elements to use in checkout form, passing the client secret obtained in step 2
     elements = stripe.elements(options);
-
     // Create and mount the Payment Element
-    const paymentElement = elements.create('payment');
+    const paymentElement = elements.create('payment',
+        {
+            fields: {
+                billingDetails: {
+                    name: 'auto',
+                    address: {
+                        country: 'never'
+                    }
+                }
+            }
+        });
     paymentElement.mount('#payment-element');
 }
